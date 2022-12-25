@@ -1,0 +1,35 @@
+import numpy as np
+
+docs = ['go india',
+		'india india',
+		'hip hip hurray',
+		'jeetega bhai jeetega india jeetega',
+		'bharat mata ki jai',
+		'kohli kohli',
+		'sachin sachin',
+		'dhoni dhoni',
+		'modi ji ki jai',
+		'inquilab zindabad']
+    
+from keras.preprocessing.text import Tokenizer
+tokenizer = Tokenizer(oov_token='<nothing>')
+
+tokenizer.fit_on_texts(docs)
+
+tokenizer.word_index
+
+tokenizer.word_counts
+
+tokenizer.document_count
+
+sequences = tokenizer.texts_to_sequences(docs)
+sequences
+
+from keras.utils import pad_sequences
+
+sequences = pad_sequences(sequences,padding='post')
+
+sequences
+
+#Input data has been prepared.
+
